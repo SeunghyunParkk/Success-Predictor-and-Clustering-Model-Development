@@ -36,7 +36,7 @@ for col in df.select_dtypes(include=['object']).columns:
     label_encoders[col] = le
 
 #df.head()
-'''
+
 # Split the data into X and y
 y = df['state']
 X = df.drop('state', axis=1)
@@ -65,9 +65,9 @@ ls = Lasso(alpha=best_alpha, random_state=815)
 model = ls.fit(X_std, y)
 selected_features_lasso = X.columns[(ls.coef_ != 0).ravel()].tolist()
 print(selected_features_lasso)
-'''
 
-'''
+
+
 ## 2. Random Forest
 # find the optimal hyperparameters using grid search
 from sklearn.ensemble import RandomForestClassifier
@@ -85,9 +85,9 @@ randomforest = RandomForestClassifier(n_estimators=6, max_features=3, min_sample
 randomforest.fit(X, y)
 selected_features_randomforest = X.columns[randomforest.feature_importances_ > 0.05].tolist()
 print(selected_features_randomforest)
-'''
 
-'''
+
+
 ### 3. Hgperparameter tuning ###
 # Models to tune
 models = {'RandomForest': RandomForestClassifier(random_state=815),'GradientBoosting': GradientBoostingClassifier(random_state=815)}
@@ -121,8 +121,7 @@ for model_name, model_dict in best_models.items():
         accuracy = accuracy_score(y_test, tuned_model.predict(X_test[feature_sets[feature_name]]))
         print(f" - Accuracy with {feature_name} selected features: {accuracy}")
     print("\n")
-'''
-'''
+
 # Final Model: Gradient Boosting with Random Forest features
 models = {'GradientBoosting': GradientBoostingClassifier(random_state=815)}
 
@@ -162,7 +161,7 @@ for model_name, model_dict in best_models.items():
         accuracy = accuracy_score(y_test, tuned_model.predict(X_test[feature_sets[feature_name]]))
         print(f" - Accuracy with {feature_name} selected features: {accuracy}")
     print("\n")
-'''
+
 # Final Model: Gradient Boosting with Random Forest features
 y = df['state']
 X = df[['goal', 'category', 'name_len', 'name_len_clean', 'create_to_launch_days', 'launch_to_deadline_days']]
@@ -216,7 +215,7 @@ y_grading_pred = final_model.predict(X_grading)
 accuracy_grading = accuracy_score(y_grading, y_grading_pred)
 print("For Grading: Accuracy is ", accuracy_grading)
 
-''' 
+
 ########################################################################################################################
 ######## Developiong a Clustering Model#################################################################################
 import pandas as pd
@@ -399,4 +398,3 @@ print(cluster_characteristics)
 
 # Save the DataFrame to an Excel file
 cluster_characteristics.to_excel("cluster_characteristics.xlsx")
-'''
