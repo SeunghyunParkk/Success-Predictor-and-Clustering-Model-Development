@@ -1,11 +1,24 @@
-# INSY662: Data Mining and Visualization - Assignments & Individual Project
+# Kickstarter Success Predictor
 
-## Description
+## Project Overview
+This project aims to predict the success of Kickstarter campaigns using machine learning models. The dataset includes a variety of features related to the campaign, which undergo preprocessing, feature selection, and finally, prediction using models like Gradient Boosting and Random Forest.
 
-This repository hosts my work for the INSY662 course, focusing on Data Mining and Visualization. It includes two main components:
+## Table of Contents
+- [Installation](#installation)
+- [Data Preprocessing](#data-preprocessing)
+- [Feature Selection](#feature-selection)
+- [Model Training and Evaluation](#model-training-and-evaluation)
+- [Clustering Analysis](#clustering-analysis)
+- [Usage](#usage)
+- [Contributing](#contributing)
 
-1. **Individual Project**: Utilizing the Kickstarter dataset, the project involves:
-   - Developing a classification model to predict project success or failure.
-   - Creating a clustering model to group projects based on various characteristics.
+## Installation
+To run this project, you will need to install the following Python libraries:
+- pandas
+- sklearn
+- numpy
+- statsmodels
 
-2. **Course Assignments**: Various assignments related to data mining and visualization concepts and techniques.
+You can install these packages using pip:
+```bash
+pip install pandas scikit-learn numpy statsmodels
