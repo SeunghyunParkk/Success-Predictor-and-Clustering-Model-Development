@@ -174,12 +174,12 @@ final_accuracy = accuracy_score(y_test, y_test_pred)
 print("Final model's accuracy is", final_accuracy)
 print("\n")
 
-######################For Grading########################################################################################
+######################For Out-Of-Sample Validation########################################################################################
 import pandas as pd
 from sklearn.metrics import accuracy_score
 
 
-grading_df = pd.read_excel("Kickstarter-Grading.xlsx")
+grading_df = pd.read_excel("Kickstarter-Grading-Sample.xlsx")
 
 # Drop post-launch columns, datetime columns, and non-predictive columns
 post_launch_columns = [
