@@ -13,6 +13,7 @@ To run this project, you will need to install the following Python libraries:
 You can install these packages using pip:
 ```bash
 pip install pandas scikit-learn numpy statsmodels
+```bash
 
 ## Dataset
 The code requires two Excel datasets named Kickstarter.xlsx and Kickstarter-Grading-Sample.xlsx. Ensure these files are in the same directory as the script or update the file paths in the script accordingly.
